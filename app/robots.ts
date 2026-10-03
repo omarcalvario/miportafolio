@@ -1,2 +1,5 @@
 import type { MetadataRoute } from "next";
-export default function robots(): MetadataRoute.Robots { return { rules: { userAgent: "*", allow: "/" }, sitemap: "https://omarcalvario.com/sitemap.xml" }; }
+import { siteUrl } from "@/lib/site-url";
+export const dynamic = "force-static";
+
+export default function robots(): MetadataRoute.Robots { return { rules: { userAgent: "*", allow: "/" }, sitemap: new URL("/sitemap.xml", siteUrl).toString() }; }

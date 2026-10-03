@@ -78,7 +78,7 @@ figcaption { padding-top:12px; }
 .horizontal-work-heading p { color:var(--muted); margin-bottom:0; }
 .drag-hint { display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-size:13px; white-space:nowrap; }
 .horizontal-track { display:flex; align-items:flex-start; gap:clamp(24px,4vw,56px); width:max-content; padding-right:72px; }
-.horizontal-project { flex:none; width:min(62vw,760px); }
+.horizontal-project { flex:none; width:min(62vw,760px,max(320px,calc((100dvh - 330px) * 1.55))); }
 .horizontal-project .project-image { aspect-ratio:1.55; }
 .horizontal-project .project-caption { padding-top:12px; }
 .horizontal-work-footer { display:flex; justify-content:space-between; width:100%; max-width:var(--page); margin:30px auto 0; color:var(--muted); font:11px var(--font-mono); }

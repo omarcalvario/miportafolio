@@ -14,7 +14,16 @@ export function HorizontalWork({ children }: { children: ReactNode }) {
   useGSAP(() => {
     const media = gsap.matchMedia();
     media.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
-      const getDistance = () => Math.max(0, (track.current?.scrollWidth ?? 0) - window.innerWidth + 2 * 72);
+      const getDistance = () => {
+        const section = root.current;
+        const rail = track.current;
+        if (!section || !rail) return 0;
+
+        const styles = window.getComputedStyle(section);
+        const horizontalPadding = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+        const visibleWidth = section.clientWidth - horizontalPadding;
+        return Math.max(0, rail.scrollWidth - visibleWidth);
+      };
       gsap.to(track.current, {
         x: () => -getDistance(), ease: "none",
         scrollTrigger: {

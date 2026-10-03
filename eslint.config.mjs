@@ -1,9 +1,7 @@
 import { defineConfig, globalIgnores } from "eslint/config";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const compat = new FlatCompat({ baseDirectory: import.meta.dirname });
+import tseslint from "typescript-eslint";
 
 export default defineConfig([
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...tseslint.configs.recommended,
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);

@@ -41,4 +41,8 @@ Los proyectos secundarios se editan en `lib/archive.ts`. El archivo visual y el 
 
 ## Despliegue
 
-Importa el repositorio en Vercel; no requiere base de datos ni variables de entorno. Actualiza `metadataBase` y las URLs de sitemap/robots en cuanto el dominio final esté definido.
+1. Importa este repositorio desde **vercel.com/new**.
+2. Conserva la configuración detectada de Next.js y haz clic en **Deploy**.
+3. Vercel desplegará automáticamente cada push a la rama conectada y creará previews para las demás ramas.
+
+No requiere una carpeta de salida personalizada ni variables para compilar. Si conectas un dominio propio, configura `NEXT_PUBLIC_SITE_URL` en Vercel con su URL completa (por ejemplo, `https://tudominio.com`) para actualizar metadata, sitemap y robots. Si no defines esa variable, se usa el dominio de producción de Vercel.
