@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
+export const metadata: Metadata = { title: "Contacto", description: "Contacta a Omar Calvario para proyectos de diseño digital, UI/UX y web." };
+export default function ContactPage() { return <main id="main" className="page-width contact-page"><span className="section-number">CONTACTO / PUEBLA, MÉXICO</span><h1>¿Tienes un proyecto<br/>en <em>mente?</em></h1><p>Si quieres diseñar una experiencia digital, mejorar una interfaz o convertir una idea en un producto web, hablemos.</p><a className="contact-email" href="mailto:omarcf.info@gmail.com">omarcf.info@gmail.com <ArrowUpRight size={22}/></a><div className="contact-details"><a href="mailto:omarcf.info@gmail.com"><Mail size={16}/> Correo electrónico</a><a href="tel:+522224819074"><Phone size={16}/> +52 22 24 81 90 74</a></div></main>; }
