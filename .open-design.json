@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "designSystem": {
+    "slug": "cisco",
+    "path": "design-systems/cisco"
+  },
+  "skill": {
+    "slug": "open-design-landing",
+    "path": "design-templates/open-design-landing",
+    "kind": "design-template",
+    "mode": "prototype"
+  },
+  "boundAt": "2026-10-04T00:00:00Z"
+}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
-const links = [{ href: "/#work", label: "Work" }, { href: "/about", label: "About" }, { href: "/#process", label: "Process" }, { href: "/contact", label: "Contact" }];
+const links = [{ href: "/#work", label: "Proyectos" }, { href: "/about", label: "Sobre mí" }, { href: "/#process", label: "Proceso" }, { href: "/contact", label: "Contacto" }];
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);

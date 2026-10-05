@@ -2,11 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { getProjects } from "@/lib/projects";
-import { ProjectCard } from "@/components/project-card";
-import { MotionIn } from "@/components/motion-in";
 import { PortfolioExtras } from "@/components/portfolio-extras";
 import { ProcessTimeline } from "@/components/process-timeline";
-import { HorizontalWork } from "@/components/horizontal-work";
+import { SelectedWork } from "@/components/selected-work";
 
 const capabilities = [
   { title: "UI / UX", items: "Arquitectura de información, user flows, wireframes, UI, prototipos e interacción." },
@@ -27,7 +25,7 @@ export default function Home() {
       </div>
       <figure className="hero-visual"><Image src="https://picsum.photos/seed/omar-visual-practice/1000/1200" alt="Fotografía editorial de muestra, no corresponde a un proyecto de cliente" fill priority fetchPriority="high" quality={60} sizes="(max-width: 768px) calc(100vw - 44px), 35vw"/><figcaption>Exploración visual. Imagen de muestra.</figcaption></figure>
     </section>
-    <HorizontalWork><>{projects.map((project, index) => <article className="horizontal-project" key={project.slug}><MotionIn delay={index * 0.035}><ProjectCard project={project} index={index}/></MotionIn></article>)}</></HorizontalWork>
+    <SelectedWork projects={projects}/>
     <section className="bridge-section contrast-dark" id="process"><div className="page-width bridge-inner"><h2>Del diseño a la <em>experiencia.</em></h2><p>Un recorrido flexible desde comprender el reto hasta llevar la solución a una interfaz funcional.</p>
       <ProcessTimeline/>
     </div></section>
