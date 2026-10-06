@@ -5,6 +5,8 @@ import { getProjects } from "@/lib/projects";
 import { PortfolioExtras } from "@/components/portfolio-extras";
 import { ProcessTimeline } from "@/components/process-timeline";
 import { SelectedWork } from "@/components/selected-work";
+import { AnimatedHeroTitle } from "@/components/animated-hero-title";
+import { HeroCursorTrail } from "@/components/hero-cursor-trail";
 
 const capabilities = [
   { title: "UI / UX", items: "Arquitectura de información, user flows, wireframes, UI, prototipos e interacción." },
@@ -37,10 +39,11 @@ export default function Home() {
   const projects = getProjects().filter(project => project.featured);
   return <main id="main">
     <section className="hero page-width">
+      <HeroCursorTrail/>
       <div className="hero-copy"><span className="eyebrow">UI/UX Designer & Web Designer</span>
-        <h1>Diseño<br/>experiencias <span><em>digitales.</em></span></h1>
+        <AnimatedHeroTitle/>
         <p>Conecto UX, interfaces y tecnología para llevar ideas desde la estructura hasta una experiencia funcional.</p>
-        <div className="hero-actions"><Link className="button-primary" href="#work">Ver proyectos <ArrowDownRight size={18}/></Link><a className="text-link" href="mailto:omarcf.info@gmail.com">Hablemos <ArrowUpRight size={18}/></a></div>
+        <div className="hero-actions"><Link className="button-primary" href="#work">Ver proyectos <ArrowDownRight size={18}/></Link><a className="text-link" href="mailto:omarcf.info@gmail.com">Contáctame <ArrowUpRight size={18}/></a></div>
       </div>
       <figure className="hero-visual"><video autoPlay muted loop playsInline preload="metadata" poster="/images/deportes-uvp/cover.webp" aria-hidden="true"><source src="/images/deportes-uvp/video-deportes.mp4" type="video/mp4"/></video></figure>
     </section>
