@@ -10,11 +10,15 @@ export function SelectedWork({ projects }: { projects: Project[] }) {
     {projects.map((project, index) => {
       const hasImage = Boolean(project.coverImage) && fs.existsSync(path.join(process.cwd(), "public", project.coverImage.replace(/^\//, "")));
       const image = hasImage ? project.coverImage : `https://picsum.photos/seed/${project.slug}-editorial/1200/900`;
+      const kbichitosBackdropPath = "/images/kbichitos/Panel de control Mariana en tonos pastel.png";
+      const backdropImage = project.slug === "kbichitos" && fs.existsSync(path.join(process.cwd(), "public", kbichitosBackdropPath.slice(1)))
+        ? kbichitosBackdropPath
+        : image;
       const videoPath = project.slug === "saia" ? "/images/saia/video-saia.mp4" : project.slug === "deportes-uvp" ? "/images/deportes-uvp/video-deportes.mp4" : project.slug === "45-aniversario-uvp" ? "/images/45-aniversario/video-45-aniversario.mp4" : undefined;
       const video = videoPath && fs.existsSync(path.join(process.cwd(), "public", videoPath.replace(/^\//, ""))) ? videoPath : undefined;
       return <article className="selected-work-panel" key={project.slug} aria-labelledby={`work-title-${project.slug}`}>
         <div className="selected-work-backdrop" aria-hidden="true">
-          <Image src={image} alt="" fill sizes="100vw" style={{ objectFit: "cover" }}/>
+          <Image src={backdropImage} alt="" fill sizes="100vw" style={{ objectFit: "cover" }}/>
         </div>
         {/* The oversized sticky range keeps each composition centered while the
             panel's paint containment reveals the next project on scroll. */}

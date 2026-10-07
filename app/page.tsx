@@ -48,7 +48,7 @@ export default function Home() {
       <figure className="hero-visual"><video autoPlay muted loop playsInline preload="metadata" poster="/images/deportes-uvp/cover.webp" aria-hidden="true"><source src="/images/deportes-uvp/video-deportes.mp4" type="video/mp4"/></video></figure>
     </section>
     <SelectedWork projects={projects}/>
-    <section className="bridge-section contrast-dark" id="process"><div className="page-width bridge-inner"><h2>Del diseño a la <em>experiencia.</em></h2><p>Un recorrido flexible desde comprender el reto hasta llevar la solución a una interfaz funcional.</p>
+    <section className="bridge-section contrast-dark" id="process"><div className="page-width bridge-inner">
       <ProcessTimeline/>
     </div></section>
     <section className="capabilities-section page-width" id="capabilities"><h2>Capacidades <em>conectadas.</em></h2><div className="capability-list">{capabilities.map(group => <article className="capability-row" key={group.title}><h3>{group.title}</h3><p>{group.items}</p></article>)}</div></section>
